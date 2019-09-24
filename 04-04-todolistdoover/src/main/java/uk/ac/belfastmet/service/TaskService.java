@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uk.ac.belfastmet.tasks.Tasks;
-import uk.ac.belfastmet.repository.TaskRespository;
+import uk.ac.belfastmet.repository.TaskRepository;
 
 
 
@@ -16,7 +16,7 @@ import uk.ac.belfastmet.repository.TaskRespository;
 public class TaskService {
 	
 	@Autowired
-	private TaskRespository taskRepository;
+	private TaskRepository taskRepository;
 	
 	Logger logger = LoggerFactory.getLogger(TaskService.class);
 	
