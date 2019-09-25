@@ -7,42 +7,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//try to keep all the package names similar
 
 @Entity
-@Table(name = "Todo list app")
-public class Tasks {
-	
-	
+@Table(name = "task")
+public class Tasks {	
 	//instance variables
-	private long id;
-	private String name;
-	private String description;
-	private String Author;
-	private int deadline;
-	
-	
-	
+	public String name;
+	public String description;
+	public String user;
+	public String priority;
+	public long id;
+		
 	
 	// constructor without fields
 	public Tasks() {
 		super();
-	}
-	
+	}	
 	/*
-	 * java doc here
-	 */
-
-	// constructor with fields
-	public Tasks(String name, String description, String author, int deadline) {
+	 * @param parameters are the instance variables on lines 15 - 19
+	 * @return constructed fields using "this."
+	 */	
+	public Tasks(String name, String description, String priority, String user, long id) {
 		super();
 		this.name = name;
 		this.description = description;
-		Author = author;
-		this.deadline = deadline;
+		this.setUser(user);
+		this.priority = priority;
+		this.id = id;
 	}
-
 	//getters and setters
+	
+	/*
+	 * @param getters and setters
+	 * @return returns instance variables
+	 */	
 	@Column(name = "name")
 	public String getName() {
 		return name;
@@ -60,24 +58,26 @@ public class Tasks {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-    
+	
 	@Column(name = "user")
-	public String getAuthor() {
-		return Author;
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
+	}
+	@Column(name = "priority")
+	public String getPriority() {
+		return priority;
 	}
 
-	public void setAuthor(String author) {
-		Author = author;
+	public void setPriority(String priority) {
+		this.priority = priority;
 	}
     
 	
-	public int getDeadline() {
-		return deadline;
-	}
 
-	public void setDeadline(int deadline) {
-		this.deadline = deadline;
-	}
+	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {

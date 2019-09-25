@@ -23,17 +23,11 @@
     <li class="nav-item active">
       <a class="nav-link" href="/">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">Page 2</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">Page 3</a>
-    </li>
   </ul>
 </nav>
 <div class="jumbotron text-center">
 
-<h1>Home page</h1>
+<h1>To Do List</h1>
 <h2></h2>
 <br />
 
@@ -43,21 +37,38 @@
 <div class="container">
 
 <p>This site will contain a to do list</p>
-<!--  <p th:text="Hello, + ${pageTitle}"></p>-->
-<table class="table table-striped">
-   <thead>
-      <tr>
-         <th>Name</th>
-         <th>Picture</th>
-      </tr>
-   </thead>
-   <tbody>
-   <tr th:each="task: ${tasks}">
-      <td th:text="${task.name}"></td>
-      <td></td>
-   </tr>
-   </tbody>
-</table>
+<div class="container">
+
+	<h3 class="text-center">My to do list</h3>
+	<div class="row">
+		<div style="margin: 0 auto;">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">User</th>
+						<th scope="col">Priority</th>
+						<th scope="col">ID</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="task: ${tasks}">
+						
+						<td th:text= "${task.name}"></td>
+						<td th:text= "${task.description}"></td>
+						<td th:text= "${task.user}"></td>
+						<td th:text= "${task.priority}"></td>
+						<td th:text= "${task.id}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+</div>
 
 
 

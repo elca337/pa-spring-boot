@@ -12,7 +12,7 @@ import uk.co.sophomores.todolistdoover.repository.TaskRepository;
 /**
  * Service class to initialise and populate arraylists of 
  * incomplete and complete tasks
- * @author KEN19171868
+ * @author CAS14105696
  */
 @Service
 public class ToDoListService {
@@ -68,29 +68,29 @@ public class ToDoListService {
 	 * Method to create a list of incomplete tasks
 	 * @return ArrayList of incomplete tasks
 	 */
-	public static ArrayList<Task> makeIncompleteTasks() {
-		for(int loop = 0; loop < tasks.size(); loop++) {
-			if(tasks.get(loop).isCompleted() == false) {
-				incompleteTasks.add(tasks.get(loop));
-			}
-		}
-		lOGGER.debug("MakeIncompleteTasks: " + incompleteTasks);
-		lOGGER.info("Exit: makeIncompleteTasks");
-		return incompleteTasks;
-	}
+//	public static ArrayList<Task> makeIncompleteTasks() {
+//		for(int loop = 0; loop < tasks.size(); loop++) {
+//			if(tasks.get(loop).isCompleted() == false) {
+//				incompleteTasks.add(tasks.get(loop));
+//			}
+//		}
+//		lOGGER.debug("MakeIncompleteTasks: " + incompleteTasks);
+//		lOGGER.info("Exit: makeIncompleteTasks");
+//		return incompleteTasks;
+//	}
 	
 	/**
 	 * Method to create a list of complete tasks
 	 * @return ArrayList of complete tasks
 	 */
-	public static ArrayList<Task> makeCompleteTasks(){
-		for(int loop = 0; loop < tasks.size(); loop++) {
-			if(tasks.get(loop).isCompleted() == true) {
-				completeTasks.add(tasks.get(loop));
-			}
-		}
-		lOGGER.debug("MakeCompleteTasks: " + completeTasks);
-		lOGGER.info("Exit: makeCompleteTasks");
-		return completeTasks;
-	}
+//	public static ArrayList<Task> makeCompleteTasks(){
+//		for(int loop = 0; loop < tasks.size(); loop++) {
+//			if(tasks.get(loop).isCompleted() == true) {
+//				completeTasks.add(tasks.get(loop));
+//			}
+//		}
+//		lOGGER.debug("MakeCompleteTasks: " + completeTasks);
+//		lOGGER.info("Exit: makeCompleteTasks");
+//		return completeTasks;
+//	}
 }

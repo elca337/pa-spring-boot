@@ -14,11 +14,11 @@ public class CompleteListController {
 
 	Logger logger = LoggerFactory.getLogger(CompleteListController.class);
 	
-//	@GetMapping("/completed")
-//	public String home(Model model){
-//		model.addAttribute("pagetitle", "Completed Tasks");
-//		model.addAttribute("tasks", ToDoListService.getCompleteTasks());
-//		return "completedtasks";
-//	}
+	@GetMapping("/completed")
+	public String home(Model model){
+		model.addAttribute("pagetitle", "Completed Tasks");
+		model.addAttribute("tasks", ToDoListService.getCompleteTasks());
+		return "completedtasks";
+	}
 }
 

@@ -1,6 +1,13 @@
 package uk.ac.belfastmet.controller;
 
-import java.util.ArrayList;
+/**
+ * 
+ * This is the controller for the to do list app
+ * 
+ * @author CAS14105696
+ * @version 2.0
+ * @since 23/09/2019
+ */
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,11 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import uk.ac.belfastmet.service.TaskService;
-import uk.ac.belfastmet.tasks.Tasks;
-
-
 
 @Controller
 @RequestMapping
@@ -21,7 +24,10 @@ public class ToDoController {
 	
 	@Autowired
 	private TaskService taskService;
-	
+	/*
+	 * @param parameters are the Model class and model instance 
+	 * @return returns "index"
+	 */
 	@GetMapping("/")	
 	public String homePage(Model model) {
 		Logger logger = LoggerFactory.getLogger(ToDoController.class); 
@@ -31,12 +37,4 @@ public class ToDoController {
 		logger.info("This running 2");
 		return "index";		
 	}
-	
-//	public ArrayList<Tasks> taskList() {
-//		return null;
-//	}
-	
-
-	
-
 }

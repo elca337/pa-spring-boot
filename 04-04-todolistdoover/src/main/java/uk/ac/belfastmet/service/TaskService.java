@@ -10,30 +10,36 @@ import org.springframework.stereotype.Service;
 import uk.ac.belfastmet.tasks.Tasks;
 import uk.ac.belfastmet.repository.TaskRepository;
 
-
+/**
+ * 
+ * This is the task service for the to do list App
+ * 
+ * @author CAS14105696
+ * @version 2.0
+ * @since 23/09/2019
+ */
 
 @Service
 public class TaskService {
 	
 	@Autowired
-	private TaskRepository taskRepository;
-	
+	private TaskRepository taskRepository;	
 	Logger logger = LoggerFactory.getLogger(TaskService.class);
-	
+	//function explanation
 	public void getNumberOfTasks() {
 		logger.info("# of Tasks: {}", taskRepository.count());
 	}
 	
 	//class name is Task,shows List here
-    ArrayList<Tasks> Tasks;
+    
 
 	public ArrayList<Tasks> getTaskList() {		
 		
-		
-		this.Tasks = new ArrayList<Tasks>();		
-		this.Tasks.add(new Tasks("Shopping", "go and get shopping", "Lee", 26092019));
+		Iterable <Tasks> tasks = new ArrayList<Tasks>();
+		tasks = taskRepository.findAll();
+		//tasks.add(new Tasks("Shopping", "go and get shopping", "Lee", "high", 0));
 	
-		return this.getTaskList();
+		return (ArrayList<Tasks>) tasks;
 	}
 
 	
